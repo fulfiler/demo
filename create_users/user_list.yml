@@ -1,1 +1,17 @@
+users:
+  - name: lovisa
+    first: len
+    middle: stan
+    last: lovisa
+    uid: 1003
+  - name: mooa
+    first: rae
+    middle: dee
+    last: Mooa
+    uid: 1009
+  - name: mkansi
+    first: cliff
+    middle: sean
+    last: mkansi
+    uid: 1007
 
