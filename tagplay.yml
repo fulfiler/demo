@@ -1,0 +1,20 @@
+---
+- name: Ensure selected task executed
+  hosts: uat_webservers
+  become: yes
+  tasks:
+    - name: first tag task
+      ansible.builtin.copy:
+        content: "who are you"
+        dest: /var/www/html/index.html
+      tags: 
+        - rae
+        - never
+
+    - name: second tag task
+      ansible.builtin.copy:
+        content: "It is what it is"
+        dest: /var/www/html/index.html
+      tags: 
+        - moh
+        - never
