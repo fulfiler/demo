@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: false
+  vars_files: 
+    - user_list.yml
+
+  tasks:  
+    - name: create users
+      loop: "{{ developer }}"
+      ansible.builtin.user: 
+        name: "{{ item }}"
+        state: present
+
