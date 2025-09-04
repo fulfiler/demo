@@ -6,7 +6,7 @@
 
     - name: create users 
       vars: 
-        password: "{{ lookup('password', 'filename-' + item.name + 'length=6 chars=digits') }}"
+        password: "{{ lookup('password', 'filename-' + item.name , 'length=6, chars=digits') }}"
       ansible.builtin.user: 
         name: "{{ item.name }}"
         uid: "{{ item.uid }}"
