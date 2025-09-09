@@ -1,0 +1,49 @@
+---
+- name: tag based play
+  hosts: web
+  become: true
+
+  tasks: 
+    - name: 1st tag 
+      ansible.builtin.copy:
+        content: "queue sera, sera sera"
+        dest: /var/www/html/index.html
+      tags: 
+        - alpha
+        - never
+
+      notify: restart httpd
+
+    - name: 2st tag 
+      ansible.builtin.copy:
+        content: "whatever will be, will be"
+        dest: /var/www/html/index.html
+      tags: 
+        - beta
+        - never
+
+      notify: restart httpd
+
+
+  handlers:
+    - name: restart httpd
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

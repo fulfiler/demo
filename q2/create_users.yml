@@ -1,6 +1,7 @@
 ---
-- hosts: localhost
-  become: false
+- hosts: test
+  become: true
+  remote_user: rae
   vars_files: 
     - user_list.yml
 
