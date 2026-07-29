@@ -1,21 +1,19 @@
 all:
   children:
-    apps:
+    azul:
       children:
-        azul:
-          children:
-            azul_dev:
-              hosts:
-                node1:
-            azul_qa:
-              hosts:
-                node2:
+        azul_dev:
+          hosts:
+            node1:
+        azul_qa:
+          hosts:
+            node2:
 
-        ric:
-          children:
-            ric_qa:
-              hosts:
-                node3:
-            ric_prod:
-              hosts:
-                node4:
+    ric:
+      children:
+        ric_qa:
+          hosts:
+            node3:
+        ric_prod:
+          hosts:
+            node4:
